@@ -17,7 +17,7 @@ export class LoginComponent {
 
   login(): void {
     if (this.authService.login(this.username, this.password)) {
-      alert('Login bem-sucedido');
+      console.log('Login bem-sucedido');
       this.router.navigate(['/home']);
     } else {
       // Lógica para lidar com falha no login
