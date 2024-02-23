@@ -10,18 +10,18 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  username: string = '';
-  password: string = '';
+  username: string = 'admin@admin.com';
+  password: string = 'admin';
 
   constructor(private authService: AuthService, private router: Router) { }
 
   login(): void {
     if (this.authService.login(this.username, this.password)) {
-      console.log('Login bem-sucedido');
+      alert('Login bem-sucedido');
       this.router.navigate(['/home']);
     } else {
       // Lógica para lidar com falha no login
-      console.log('Falha no login');
+      alert('Credenciais inválidas. Tente novamente.');
     }
   }
 }
